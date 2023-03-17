@@ -1,0 +1,9 @@
+[requires]
+eigen/3.4.0
+
+[options]
+eigen*:shared=True
+
+[generators]
+CMakeDeps
+CMakeToolchain
