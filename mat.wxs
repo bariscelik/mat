@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="DD475EBC-D960-4AF4-BB8A-BE91FA942756"
+           Language="1033"
+           Manufacturer="Acme Corporation"
+           Name="Mat App"
+           Version="1.0.0.0">
+
+    <Package InstallScope="perMachine" Compressed="yes" />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Hello World Installation Folder">
+          <Component Id="ProductComponent" Guid="DD475EBC-D960-4AF4-BB8A-BE91FA942756">
+            <File KeyPath="yes" Source="dist/build/Release/mat.exe"></File>
+            <File Source="dist/build/lib/Release/cgcustommath.dll"></File>
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="HelloWorldFeature">
+      <ComponentRef Id="ProductComponent" />
+    </Feature>
+
+  </Product>
+</Wix>
