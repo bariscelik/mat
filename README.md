@@ -9,6 +9,10 @@ Please use "command prompt" while following next steps
    ```
    choco install cmake
    ```
+1. Install Python
+   ```
+   choco install python
+   ```
 1. Install conan 2.x 
    ```
    choco install conan
@@ -39,3 +43,12 @@ Please use "command prompt" while following next steps
    ```
 
 You can open the root folder using **Visual Studio**. But you should select "Debug" as Startup Item in the dropdown.
+
+### Build Installer
+
+```
+python create_installer_windows.py
+
+# set the wix bin/ path if the installed WiX isn't in the default path
+python create_installer_windows.py # --wix_bin_path="<WIX_BIN_PATH>"
+```
