@@ -9,11 +9,7 @@ find_package(EIGEN3 REQUIRED)
 
 add_executable(mat main.cpp)
 
-# install(TARGETS mat
-#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
 add_subdirectory(lib)
-
 include_directories(lib)
 
-target_link_libraries(mat Eigen3::Eigen cgcustommath)
+target_link_libraries(mat PRIVATE cgcustommath)
