@@ -60,7 +60,7 @@ try:
 
     # link the object file into an MSI file
     light_exe = os.path.join(wix_bin_path, "light.exe")
-    subprocess.check_call([light_exe, "-out", output_msi_file, object_file])
+    subprocess.check_call([light_exe, "-out", output_msi_file, object_file, "-ext", "WixUIExtension"])
 
     print(bcolors.OKGREEN + "Installer created successfully: %s" % output_msi_file + bcolors.ENDC)
 

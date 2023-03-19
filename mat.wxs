@@ -7,12 +7,15 @@
            Version="1.0.0.0">
 
     <Package InstallScope="perMachine" Compressed="yes" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+		<UIRef Id="WixUI_InstallDir" />
+    
 
     <MediaTemplate EmbedCab="yes" />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLFOLDER" Name="Hello World Installation Folder">
+        <Directory Id="INSTALLFOLDER" Name="MatApp">
           <Component Id="ProductComponent" Guid="DD475EBC-D960-4AF4-BB8A-BE91FA942756">
             <File KeyPath="yes" Source="dist/build/Release/mat.exe"></File>
             <File Source="dist/build/lib/Release/cgcustommath.dll"></File>
@@ -21,7 +24,7 @@
       </Directory>
     </Directory>
 
-    <Feature Id="HelloWorldFeature">
+    <Feature Id="AFeature">
       <ComponentRef Id="ProductComponent" />
     </Feature>
 
