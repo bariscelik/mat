@@ -6,9 +6,9 @@ This is a subdirectory CMake project that consists of a simple example library w
 ### Windows
 Please use "command prompt" while following next steps
 1. Install `chocolatey` by following https://chocolatey.org/install
-1. Install CMake, Python and conan 
+1. Install CMake, Python, conan and WiXToolset
    ```console
-   choco install cmake python conan
+   choco install cmake python conan wixtoolset
    ```
 1. If you have Visual Studio 2022 (C++ Build Tools should be installed), please skip this step. To install Visual Studio 2022 Build  Tools using choco:
    ```console
