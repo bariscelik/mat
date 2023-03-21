@@ -47,11 +47,13 @@ output_msi_file = "./dist/MatApp_Setup.msi"
 # create a temp directory
 temp_dir = tempfile.mkdtemp()
 
+build_dir = os.path.join(temp_dir, "build")
+
 try:
     # compile release version of the app
-    subprocess.check_call(["conan", "install", ".", "--output-folder=dist/build", "--build=missing", "--settings=build_type=Release"])
-    subprocess.check_call(["cmake", ".", "-B", "dist/build", "-DCMAKE_TOOLCHAIN_FILE=dist/build/conan_toolchain.cmake"])
-    subprocess.check_call(["cmake", "--build", "dist/build", "--config", "Release"])
+    subprocess.check_call(["conan", "install", ".", "--output-folder=%s" % build_dir, "--build=missing", "--settings=build_type=Release"])
+    subprocess.check_call(["cmake", ".", "-B", build_dir, "-DCMAKE_TOOLCHAIN_FILE=%s/conan_toolchain.cmake" % build_dir])
+    subprocess.check_call(["cmake", "--build", build_dir, "--config", "Release"])
 
     # compile wixobj
     object_file = os.path.join(temp_dir, "output.wixobj")

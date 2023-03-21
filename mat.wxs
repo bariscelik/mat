@@ -17,8 +17,8 @@
       <Directory Id="ProgramFilesFolder">
         <Directory Id="INSTALLFOLDER" Name="MatApp">
           <Component Id="ProductComponent" Guid="DD475EBC-D960-4AF4-BB8A-BE91FA942756">
-            <File KeyPath="yes" Source="dist/build/Release/mat.exe"></File>
-            <File Source="dist/build/lib/Release/cgcustommath.dll"></File>
+            <File KeyPath="yes" Source="build/Release/mat.exe"></File>
+            <File Source="build/lib/Release/cgcustommath.dll"></File>
           </Component>
         </Directory>
       </Directory>
