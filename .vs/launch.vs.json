@@ -5,9 +5,12 @@
     {
       "type": "default",
       "project": "CMakeLists.txt",
-      "projectTarget": "",
-      "name": "Debug",
-      "args": ["3","1"]
+      "projectTarget": "mat.exe (Debug\\mat.exe)",
+      "name": "mat.exe (Debug\\mat.exe)",
+      "args": [
+        "3",
+        "1"
+      ]
     }
   ]
 }
