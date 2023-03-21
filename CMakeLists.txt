@@ -14,6 +14,13 @@ include_directories(lib)
 
 target_link_libraries(mat PRIVATE cgcustommath)
 
+if(WIN32)
+add_custom_command ( TARGET mat POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    $<TARGET_FILE:cgcustommath> $<TARGET_FILE_DIR:mat>
+)
+endif()
+
 if(APPLE)
     set_target_properties(mat PROPERTIES
         XCODE_EMBED_FRAMEWORKS							"cgcustommath"
